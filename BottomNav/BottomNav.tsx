@@ -61,9 +61,9 @@ const NavBar = ()=>{
 
 const BottomNav = () =>{
     return(
-        <NavigationContainer  independent={true}>
+        
         <NavBar/>
-    </NavigationContainer>
+    
     );    
 }
 

@@ -4,8 +4,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ScrollView,Text } from 'react-native';
+import Home from './Home';
+import Contact from './Contact';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 function CustomDrawerContent(props){
 	return(
+		<SafeAreaView>
 		<ScrollView style={styles.container}>
 			<View style={styles.drawerHeader}>
 				<Text style={styles.drawerHeaderText} >Drawer Menu</Text>
@@ -20,24 +24,27 @@ function CustomDrawerContent(props){
 				
 			</DrawerContentScrollView>
 		</ScrollView>
+		</SafeAreaView>
 	);	
 }
 const Drawer = createDrawerNavigator();
 
 function MyDrawer(){
 	return(
+		<SafeAreaProvider>
 		<Drawer.Navigator initialRouteName="Home">
 			<Drawer.Screen name="Home" component={Home}/>
 			<Drawer.Screen name="Contact" component={Contact}/>
 		</Drawer.Navigator>
+		</SafeAreaProvider>
 
 	);
 }
 export default function DrawereNavigation(){
     return(
-		<NavigationContainer>
+		
 			<MyDrawer/>
-		</NavigationContainer>
+		
       
     );
 }
