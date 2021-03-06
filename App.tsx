@@ -8,6 +8,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Home from './Screen_Social/Home';
 import Nav from './Navigation_Social/BottomNav';
 import Header from './Navigation_Social/Header';
+import DrawerNav from './Screens/Drawer';
 //import Home from './Screens/Home';
 
 const Drawer = createDrawerNavigator();
@@ -19,10 +20,7 @@ export default function App() {
            //<StackNav/>
            //<TabkNav/>
            <Nav/>    
-           
-           
-
-  );
+        );
 }
 
 const styles = StyleSheet.create({

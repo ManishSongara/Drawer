@@ -1,28 +1,66 @@
 import * as React from "react";
-import { Platform } from "react-native";
-import { Button, View, Text, StyleSheet } from "react-native";
+import { Platform, StatusBar } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView  } from "react-native";
 import { Icon } from "react-native-elements";
-import { Colors, IconButton } from "react-native-paper";
+import { ScrollView } from "react-native-gesture-handler";
+import { Card, Colors, IconButton, Paragraph, Title, Button } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Header from "../Navigation_Social/Header";
 
-export default function Home() {
+ 
+export default function Home({navigation}) {
+  
   const insets = useSafeAreaInsets();
   return (
-    <View style={{ flex: 1, marginTop: insets.top }}>
-        <Header iconName="menu" iconName1="message" title="HOME"/>
-      <View style={styles.container}>
-        <Text> hoem is working</Text>
-      </View>
-    </View>
-  );
+
+    <SafeAreaView style={styles.droidSafeArea}>
+      <Header title="frnzBook"/>
+        <ScrollView>
+       <Card style={{ margin:"2%"}} >
+          <Card.Title title="User.one" subtitle="User.name"/>
+          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+          <Card.Actions>
+            <Button>Cancel</Button>
+            <Button>Ok</Button>
+          </Card.Actions>
+        </Card> 
+        <Card style={{ margin:"2%"}} >
+          <Card.Title title="User.two" subtitle="User.name"/>
+          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+          <Card.Actions>
+            <Button>Cancel</Button>
+            <Button>Ok</Button>
+          </Card.Actions>
+        </Card> 
+        <Card style={{ margin:"2%"}} >
+          <Card.Title title="User.three" subtitle="User.name"/>
+          <Card.Cover  source={{ uri: 'https://picsum.photos/700' }}  resizeMode="contain" />
+          <Card.Actions>
+            <Button>Cancel</Button>
+            <Button>Ok</Button>
+          </Card.Actions>
+        </Card> 
+        <Card style={{ margin:"2%"}} >
+          <Card.Title title="User.name" subtitle="User.name"/>
+          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+          <Card.Actions>
+            <Button>Cancel</Button>
+            <Button>Ok</Button>
+          </Card.Actions>
+        </Card> 
+        </ScrollView>
+    
+      </SafeAreaView>
+      );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
+  droidSafeArea: {
+    flex: 1,
+    //paddingTop: Platform.OS === 'android' ? 30 : 0,
+    marginTop:StatusBar.currentHeight,
+},
 });

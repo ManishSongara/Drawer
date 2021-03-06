@@ -13,7 +13,6 @@ export default function Home({ navigation}){
         />
         <View style={styles.content}>
         <Text style={styles.text}>Home is here!</Text>
-        <Button onPress={() => navigation.openDrawer()} title="open" />
         </View>        
       </View>
 

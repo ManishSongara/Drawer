@@ -6,6 +6,8 @@ export default function Header(props) {
       const iconName=props.iconName;
       const iconName1=props.iconName1;
       const title =props.title;
+      const fun = props.ToggleDrawer;
+      const nav = props.nav;
     return(
          <View
         style={{
@@ -13,15 +15,14 @@ export default function Header(props) {
           justifyContent: "space-between",
           backgroundColor: "#fff",
           borderBottomColor: "#707070",
-          borderBottomWidth: 1,
+          borderBottomWidth: 0.5,
         }}
       >
         <IconButton
           style={{ margin: 10 }}
           icon={iconName}
-          onPress={() => {
-            alert("hello");
-          }}
+          onPress={()=>{ nav.openDrawer(); }}
+          
         />
         <Text style={{ marginTop: 15 }}>{title}</Text>
         <IconButton

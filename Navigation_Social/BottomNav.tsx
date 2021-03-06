@@ -1,18 +1,18 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { Button, View, Text, StyleSheet, Platform } from 'react-native';
-import Home from '../Screen_Social/Home';
 import { NavigationContainer } from '@react-navigation/native';
 import Msg from '../Screen_Social/Msg';
 import Notific from '../Screen_Social/Notification';
 import Profile from '../Screen_Social/profile';
 import Icon from "react-native-vector-icons/Ionicons";
 import { Avatar } from 'react-native-paper';
+import DrawerSocial from './Drawer';
 const TabBottom = createBottomTabNavigator();
 const MyNav = ()=>{
     return(
         <TabBottom.Navigator>
-            <TabBottom.Screen  name="Home" component={Home} options={{
+            <TabBottom.Screen  name="Home" component={DrawerSocial} options={{
                 tabBarLabel:"Home",
                 tabBarIcon: ({ color, size }) => (
                     <Icon name={Platform.OS === 'ios' ? "ios-home" : "md-home"} color={color} size={size} />
@@ -22,9 +22,7 @@ const MyNav = ()=>{
                 tabBarIcon:({color, size}) =>(
                     <Icon name={Platform.OS === 'ios' ? "ios-mail" : "md-mail"} color={color} size={size} />
                 ),
-            }}
-            
-            
+            }}                      
             />
             <TabBottom.Screen name="Notification" component={Notific} options={{
                 tabBarIcon:({color, size}) =>(
