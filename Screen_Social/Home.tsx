@@ -15,7 +15,7 @@ export default function Home({navigation}) {
   return (
 
     <SafeAreaView style={styles.droidSafeArea}>
-      <Header title="frnzBook"/>
+      <Header title="frnzBook" iconName="menu" nav={navigation} iconName1="message" />
         <ScrollView>
         <Cards></Cards>
         </ScrollView>          
