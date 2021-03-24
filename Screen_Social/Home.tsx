@@ -6,6 +6,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Card, Colors, IconButton, Paragraph, Title, Button } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Cards from "../Cards/Card";
+import LeftCards from "../Cards/left-card";
 import Header from "../Navigation_Social/Header";
 
  
@@ -16,9 +17,16 @@ export default function Home({navigation}) {
 
     <SafeAreaView style={styles.droidSafeArea}>
       <Header title="frnzBook" iconName="menu" nav={navigation} iconName1="message" />
-        <ScrollView>
-        <Cards></Cards>
-        </ScrollView>          
+      <View style={{ flexDirection: "row"}} > 
+          <View style={{backgroundColor: "#FFFFFF", width: "20%"}}>
+               <LeftCards/>
+          </View>
+          <View style={{backgroundColor: "#FFFFFF", width: "50%"}}>
+              <ScrollView>
+            <Cards></Cards>
+            </ScrollView>    
+          </View>
+      </View>             
       </SafeAreaView>
       );
 }
