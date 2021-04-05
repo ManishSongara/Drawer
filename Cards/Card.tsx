@@ -10,7 +10,7 @@ import { Foundation } from '@expo/vector-icons';
 export default  function Cards(){
     const LeftContent = <Text>hello</Text>;
     return(
-    <View style={{flex: 1,  margin: "1%"  }}>     
+    <View style={{flex: 1,  margin: 2, backgroundColor: "#FFF"  }}>     
       <View style={styles.container}>
           <View style={{ margin:"1%" }}>
           <Avatar.Image size={35} source={{ uri: 'https://picsum.photos/700' }} />
@@ -47,7 +47,8 @@ export default  function Cards(){
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        backgroundColor: "#FFFFFF",        
+         
+        marginTop:10     
     },
     img: {
         width: "100%",

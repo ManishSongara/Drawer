@@ -17,16 +17,17 @@ export default function Home({navigation}) {
 
     <SafeAreaView style={styles.droidSafeArea}>
       <Header title="frnzBook" iconName="menu" nav={navigation} iconName1="message" />
-      <View style={{ flexDirection: "row"}} > 
-          <View style={{backgroundColor: "#FFFFFF", width: "20%"}}>
-               <LeftCards/>
-          </View>
-          <View style={{backgroundColor: "#FFFFFF", width: "50%"}}>
+      
+      <View style={{margin:2}}>
               <ScrollView>
-            <Cards></Cards>
+            <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
             </ScrollView>    
-          </View>
-      </View>             
+          </View> 
       </SafeAreaView>
       );
 }
